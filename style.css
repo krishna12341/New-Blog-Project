@@ -1,0 +1,236 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-left: 1px;
+    margin-block: 6px;
+}
+
+body {
+    background-color: #f0f8ff; /* Light background color for the whole page */
+    color: #333; /* Dark text color for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.navigation {
+    font-family: var(--font1);
+    height: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.nav-left {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav-left ul {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 10px;
+    flex-direction: column;
+    padding: 0;
+}
+
+.nav-left ul li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+.nav-left ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 0;
+}
+
+.nav-left ul li a:hover {
+    font-weight: bolder;
+    color: var(--main-bg-color);
+}
+
+.nav-right {
+    font-size: 20px;
+}
+
+/* Content */
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.content-left {
+    font-family: var(--font1);
+    margin: 20px 0;
+    width: 100%;
+}
+
+.content-right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.content-right img {
+    height: 110px;
+    border: 2px solid black;
+    border-radius: 200px;
+    margin-top: 20px;
+}
+
+.footer {
+    height: 50px;
+}
+
+/* Blog Post Summary */
+.blog-post-summary {
+    flex-direction: row;
+    background-color: #d4f5d5;
+    border-radius: 18px;
+    box-shadow: 0 2px 4px rgba(232, 149, 149, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    overflow: auto;
+}
+
+.blog-image img {
+    width: 100%; /* Ensure image takes full width of its container */
+
+    object-fit: cover; /* Ensure the image covers the container while maintaining its aspect ratio */
+}
+
+.blog-content {
+    margin-top: 15px;
+    
+}
+
+.logo {
+    height: 79px;
+    width: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 22px;
+    margin-right: 53px;
+    margin-left: -10px;
+    border-radius: 54%;
+    object-fit: cover;
+}
+.heading-text {
+    overflow-x: auto; /* Allows horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping of list items */
+}
+
+.heading-text ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    display: inline-flex; /* Aligns items horizontally but allows scrolling */
+}
+
+.heading-text ul li {
+    margin-right: 20px; /* Adjust spacing between the items */
+}
+
+.heading-text ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #000; /* Sets the link color */
+    font-weight: bold; /* Optional: Makes the text bold */
+}
+
+.heading-text ul li a:hover {
+    color: #007bff; /* Optional: Adds a hover effect */
+}
+
+
+
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .navigation {
+        padding: 0 20px;
+    }
+
+    .nav-left {
+        flex-direction: row;
+    }
+    .blog-image {
+        float: right; /* Floats the image to the right */
+        width: 20%; /* Adjust width as needed */
+        margin-left: 10px; /* Space between image and text */
+        border-radius: 12px;
+        height: 100%;
+        overflow: auto;
+    }
+
+
+    .nav-left ul li {
+        margin: 0 14px;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+
+
+        .blog-post-summary {
+            flex-direction: row;
+            padding-right: 5px;
+            margin-right: 74px;
+            padding-left: 14px;
+        
+    }
+
+
+
+
+    /* Styling for the div containing the button */
+#submitBlogButton {
+    text-align: center; /* Center align the button */
+    margin: 20px; /* Add some space around the div */
+}
+
+/* Styling for the button */
+#submitBlogButton button {
+    background-color: #4CAF50; /* Green background color */
+    border: none; /* Remove default border */
+    color: white; /* White text color */
+    padding: 15px 32px; /* Padding around the text */
+    text-align: center; /* Center align the text */
+    text-decoration: none; /* Remove underline from text */
+    display: inline-block; /* Ensure the button aligns inline */
+    font-size: 16px; /* Font size of the text */
+    margin: 4px 2px; /* Margin around the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Hover effect for the button */
+#submitBlogButton button:hover {
+    
+    background-color:  var(--main-bg-color); /* Darker green when hovered */
+}
+
+
+    .blog-content {
+        padding-left: 20px; /* Space between image and text */
+        overflow: auto;
+    }
+}
+

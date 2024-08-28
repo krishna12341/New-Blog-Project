@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Blog Post</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h2>Submit Your Blog Post</h2>
+    <form id="blogForm">
+        <label for="blogTitle">Title:</label><br>
+        <input type="text" id="blogTitle" name="blogTitle" required><br><br>
+
+        <label for="blogContent">Content:</label><br>
+        <textarea id="blogContent" name="blogContent" rows="10" cols="50" required></textarea><br><br>
+
+        <button type="button" onclick="submitBlog()">Submit</button>
+    </form>
+
+    <div id="submittedBlog" style="display:none;">
+        <h2>Your Submitted Blog</h2>
+        <h3 id="displayTitle"></h3>
+        <p id="displayContent"></p>
+    </div>
+
+    <script>
+        function submitBlog() {
+            var title = document.getElementById("blogTitle").value;
+            var content = document.getElementById("blogContent").value;
+
+            document.getElementById("displayTitle").innerText = title;
+            document.getElementById("displayContent").innerText = content;
+            document.getElementById("submittedBlog").style.display = "block";
+
+            document.getElementById("blogForm").reset();
+        }
+    </script>
+</body>
+</html>

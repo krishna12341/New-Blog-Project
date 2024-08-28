@@ -1,0 +1,51 @@
+:root{
+    --main-bg-color: brown;
+}
+
+
+
+
+
+
+.max-width-1{
+    max-width: 80vw;
+}
+
+.max-width-2{
+    max-width: 60vw;
+}
+.m-auto{
+    margin: auto;
+}
+:root{
+    --main-bg-color :brown;
+}
+
+
+
+.btn:hover{
+    color: aliceblue;
+    background-color: var(--main-bg-color)
+
+}
+
+
+.btn{
+    margin: 8px 13px;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-family: var(--font1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #4CAF50;
+    color: aliceblue;
+}
+.form-input{
+    font-size: 13px;
+    border-radius: 6px;
+    margin: 0px 13px;
+    padding: 0px 15px;
+    font-family: var(--font1);
+    margin-block: auto;
+    margin-top: 20px;
+}

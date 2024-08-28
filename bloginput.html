@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Blog Post</title>
+</head>
+
+<body>
+    <h1>Submit Your Blog Post</h1>
+    <form id="blogForm">
+        <label for="blogTitle">Title:</label><br>
+        <input type="text" id="blogTitle" name="blogTitle" required><br><br>
+
+        <label for="blogContent">Content:</label><br>
+        <textarea id="blogContent" name="blogContent" rows="10" cols="50" required></textarea><br><br>
+
+        <label for="blogNiche">Niche:</label><br>
+        <input type="text" id="blogNiche" name="blogNiche" required><br><br>
+
+        <button type="button" onclick="submitBlog()">Submit</button>
+    </form>
+
+    <div id="submittedBlog" style="display:none;">
+        <h2>Your Submitted Blog</h2>
+        <h3 id="displayTitle"></h3>
+        <p id="displayContent"></p>
+    </div>
+
+    <script>
+        function submitBlog() {
+            // Get the user input
+            var title = document.getElementById("blogTitle").value;
+            var content = document.getElementById("blogContent").value;
+            var niche = document.getElementById("blogNiche").value;
+
+            // Send the data to the backend API
+            fetch('http://localhost:3000/blogPost', { // Updated endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: title,
+                    content: content,
+                    niche: niche // Include the niche in the request body
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+
+                // Display the submitted content
+                document.getElementById("displayTitle").innerText = title;
+                document.getElementById("displayContent").innerText = content;
+                document.getElementById("submittedBlog").style.display = "block";
+
+                // Optionally, you can clear the form after submission
+                document.getElementById("blogForm").reset();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+
+</html>
